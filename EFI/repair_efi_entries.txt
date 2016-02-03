@@ -1,0 +1,22 @@
+# NVRAM EFI entries are stored on the motheboard and can get deleted 
+# when installing new operating systems on an external hdd, or when
+# swapping out internal hdds for installation purposes.
+# These commands assume drives are already partitioned with EFI
+# partitions and just need to be re-referenced in NVRAM
+
+## list detailed EFI entries
+sudo efibootmgr -v
+
+## create new ubuntu EFI entry 
+# /dev/sd* is the target drive - eg. /dev/sda, /dev/sdb, etc
+# "entry_label" can be any string
+sudo efibootmgr -c -l \\EFI\\ubuntu\\grubx64.efi -L "entry_label" -d /dev/sd*
+
+## delete EFI entry 
+# xxxx is the existing entry number eg. 0000, 0001, etc
+sudo efibootmgr -b xxxx -B
+
+
+## References
+http://askubuntu.com/questions/594812/switching-disks-make-boot-fail
+
