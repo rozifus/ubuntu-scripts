@@ -1,0 +1,11 @@
+# Reset permission on files and folders to sane values 
+
+## reset directory/folder permissions 
+find ./ -type d -exec chmod 755 {} \;
+
+## reset file permissions
+find ./ -type f -exec chmod 644 {} \;
+
+
+## References
+http://stackoverflow.com/questions/3740152/how-to-set-chmod-for-a-folder-and-all-of-its-subfolders-and-files-in-linux-ubunt
