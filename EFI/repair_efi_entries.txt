@@ -1,3 +1,5 @@
+#### Repair EFI entries
+
 # NVRAM EFI entries are stored on the motheboard and can get deleted 
 # when installing new operating systems on an external hdd, or when
 # swapping out internal hdds for installation purposes.

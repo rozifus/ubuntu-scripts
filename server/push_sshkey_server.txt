@@ -1,0 +1,8 @@
+#### Push an ssh key to a remote ubuntu server 
+
+## Push a key via ssh
+cat ~/.ssh/id_rsa.pub | ssh user@hostname 'cat >> .ssh/authorized_keys'
+
+
+## References
+http://www.howtogeek.com/168147/add-public-ssh-key-to-remote-server-in-a-single-command/

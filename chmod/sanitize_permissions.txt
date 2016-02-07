@@ -1,4 +1,4 @@
-# Reset permission on files and folders to sane values 
+#### Reset permission on files and folders to sane values 
 
 ## reset directory/folder permissions 
 find ./ -type d -exec chmod 755 {} \;
