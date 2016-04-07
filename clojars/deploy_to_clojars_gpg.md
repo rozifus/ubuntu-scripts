@@ -15,11 +15,45 @@ Check keys
 gpg --list-keys
 ```
 
+## Create clojars account
+
+(If you don't have one yet)
+
+## Setup gpg encrypted Leiningen credentials file
+
+Create unencrypted file
+
+```bash
+gvim ~/.lein/credentials.clj
+```
+
+Set clojars info
+
+```clojure
+{ 
+  #"https://clojars.org/repo"
+  {:username "your_username" :password "your_pass"} 
+}
+```
+
+Encrypt file
+
+```bash
+gpg --default-recipient-self -e \
+  ~/.lein/credentials.clj > ~/.lein/credentials.clj.gpg
+```
+
+Delete unencrypted file
+
+```bash
+rm ~/.lein/credentials.clj
+```
+
 ## Configure project.clj
 
 Add keys 
 
-```clojurescript
+```clojure
 (defproject your-group/your-artifact "0.0.1"
 
   ...
